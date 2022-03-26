@@ -1,7 +1,8 @@
 <template>
   <header id="main-header" :class="isProfileView ? 'main-header--simple' : ''">
     <figure class="main-header__logo">
-      <img src="@/assets/img/logo.svg" alt="" />
+      <img class="hidden md:block" src="@/assets/img/logo.svg" alt="" />
+      <img class="md:hidden" src="@/assets/img/logo-small.svg" alt="">
     </figure>
 
     <nav class="main-header__navbar">
@@ -32,10 +33,10 @@ export default {
 
 <style lang="scss" scoped>
 #main-header {
-  @apply shrink-0 py-5 px-11 bg-gradient-to-b from-[#060606] flex justify-between;
+  @apply shrink-0 py-6 px-5 md:px-11 bg-gradient-to-b from-[#060606] flex justify-between;
 
   .main-header__logo {
-    @apply w-24;
+    @apply w-10 md:w-24;
   }
 
   &.main-header--simple {
