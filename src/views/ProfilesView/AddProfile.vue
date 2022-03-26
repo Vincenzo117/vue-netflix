@@ -10,10 +10,7 @@
 
       <div class="add-profile__body">
         <figure class="body__thumb">
-          <img
-            src="https://occ-0-1068-92.1.nflxso.net/art/179a8/514618e1d7554648a39e294f43585ddba07179a8.png"
-            alt="#"
-          />
+          <img :src="newProfile.avatar" alt="#" />
         </figure>
         <input
           :class="['body__input', wrongName ? 'body__input--wrong' : '']"
@@ -58,8 +55,7 @@ export default {
       newProfile: {
         id: null,
         name: "",
-        avatar:
-          "https://occ-0-1068-92.1.nflxso.net/art/179a8/514618e1d7554648a39e294f43585ddba07179a8.png",
+        avatar: "",
         kids: false,
       },
       wrongName: false,
@@ -72,21 +68,23 @@ export default {
         this.wrongName = false;
         this.newProfile.id = this.profiles.length + 1;
         this.createProfile(this.newProfile);
-        this.newProfile = {
-          id: null,
-          name: "",
-          avatar:
-            "https://occ-0-1068-92.1.nflxso.net/art/179a8/514618e1d7554648a39e294f43585ddba07179a8.png",
-          kids: false,
-        };
+
         this.$router.push({ name: "ChooseProfile" });
       } else {
         this.wrongName = true;
       }
     },
+    getRandomAvatar() {
+      return this.profileAvatars[
+        Math.floor(Math.random() * this.profileAvatars.length)
+      ];
+    },
   },
   computed: {
-    ...mapGetters(["profiles"]),
+    ...mapGetters(["profiles", "profileAvatars"]),
+  },
+  created() {
+    this.newProfile.avatar = this.getRandomAvatar();
   },
 };
 </script>
