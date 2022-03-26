@@ -1,12 +1,14 @@
 <template>
   <div id="choose-profile">
     <div class="choose-profile__content-wrapper">
-
       <h1 class="choose-profile__title">Chi vuole guardare Netflix?</h1>
 
       <ul class="choose-profile__profile-list">
-
-        <li class="profile-card" v-for="profile in profiles" :key="profile.id">
+        <li
+          v-for="profile in profiles"
+          :key="profile.id"
+          :class="['profile-card', profile.id == 1 ? 'profile-card--kids' : '']"
+        >
           <figure class="profile-card__avatar">
             <img :src="profile.avatar" alt="" />
           </figure>
@@ -14,17 +16,18 @@
             {{ profile.name }}
           </h3>
         </li>
-
-        <li class="profile-card profile-card--add-profile">
-          <figure class="profile-card__avatar">
-            <font-awesome-icon icon="fa-solid fa-circle-plus" />
-          </figure>
-          <h3 class="profile-card__title">Aggiungi un profilo</h3>
-        </li>
-
+        <router-link :to="{ name: 'AddProfile' }" class="contents">
+          <li class="profile-card profile-card--add-profile">
+            <figure class="profile-card__avatar">
+              <font-awesome-icon icon="fa-solid fa-circle-plus" />
+            </figure>
+            <h3 class="profile-card__title">Aggiungi un profilo</h3>
+          </li>
+        </router-link>
       </ul>
-
-      <ActionButton text="Aggiungi un profilo" color="gray" />
+      <router-link :to="{ name: 'AddProfile' }" class="choose-profile__button">
+        <ActionButton text="Aggiungi un profilo" color="gray" />
+      </router-link>
     </div>
   </div>
 </template>
@@ -74,11 +77,20 @@ export default {
         }
 
         &.profile-card--add-profile {
+            @apply order-[100];
           .profile-card__avatar {
             @apply aspect-square text-[80px] flex justify-center items-center;
           }
         }
+
+        &.profile-card--kids {
+            @apply order-[99];
+        }
       }
+    }
+
+    .choose-profile__button {
+      @apply mt-10 lg:mt-24;
     }
   }
 }

@@ -1,13 +1,13 @@
 <template>
   <header id="main-header" :class="isProfileView ? 'main-header--simple' : ''">
-    <figure class="main-header__logo">
-      <img class="hidden md:block" src="@/assets/img/logo.svg" alt="" />
-      <img class="md:hidden" src="@/assets/img/logo-small.svg" alt="">
-    </figure>
+    <router-link :to="{ name: 'ChooseProfile' }" class="contents">
+      <figure class="main-header__logo">
+        <img class="hidden md:block" src="@/assets/img/logo.svg" alt="" />
+        <img class="md:hidden" src="@/assets/img/logo-small.svg" alt="" />
+      </figure>
+    </router-link>
 
-    <nav class="main-header__navbar">
-        Not in ProfilesView anymore
-    </nav>
+    <nav class="main-header__navbar">Not in ProfilesView anymore</nav>
   </header>
 </template>
 
@@ -40,9 +40,9 @@ export default {
   }
 
   &.main-header--simple {
-      .main-header__navbar {
-          @apply hidden;
-      }
+    .main-header__navbar {
+      @apply hidden;
+    }
   }
 }
 </style>
