@@ -1,22 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import ChooseProfile from '@/views/ProfilesView/ChooseProfile.vue';
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    redirect: '/choose-profile'
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/choose-profile',
+    name: 'ChooseProfile',
+    component: ChooseProfile
+  },
+  {
+    path: '/create-new-profile',
+    name: 'AddProfile',
+    component: () => import('../views/ProfilesView/AddProfile.vue')
   }
 ]
 
