@@ -18,7 +18,13 @@ const routes = [
     path: '/create-new-profile',
     name: 'AddProfile',
     component: () => import('../views/ProfilesView/AddProfile.vue')
-  }
+  },
+  {
+    path: '/select-profile-to-manage',
+    name: 'SelectProfileToManage',
+    component: () => import('../views/ProfilesView/SelectProfileToManage.vue')
+  },
+
 ]
 
 const router = new VueRouter({

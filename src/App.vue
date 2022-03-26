@@ -2,7 +2,9 @@
   <div id="app">
     <MainHeader />
 
-    <router-view />
+    <transition name="slide" mode="out-in">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -28,6 +30,16 @@ export default {
   img {
     @apply w-full;
   }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 1s, scale 1s; 
+}
+.slide-enter,
+.slide-leave {
+  opacity: 0;
+  scale: 0.1;
 }
 </style>
 

@@ -25,8 +25,8 @@
           </li>
         </router-link>
       </ul>
-      <router-link :to="{ name: 'AddProfile' }" class="choose-profile__button">
-        <ActionButton text="Aggiungi un profilo" color="gray" />
+      <router-link :to="{ name: 'SelectProfileToManage' }" class="choose-profile__button">
+        <ActionButton text="Gestisci i profili" color="gray" />
       </router-link>
     </div>
   </div>
@@ -62,7 +62,7 @@ export default {
       @apply shrink-0 flex justify-center flex-wrap;
 
       .profile-card {
-        @apply min-w-[180px] w-1/4 mb-6 px-3 lg:px-5 text-center text-[#808080] hover:text-white cursor-pointer;
+        @apply min-w-[180px] w-1/4 max-w-[200px] mb-6 px-3 lg:px-5 text-center text-[#808080] hover:text-white cursor-pointer;
 
         &:hover .profile-card__avatar {
           @apply outline outline-4 outline-white;

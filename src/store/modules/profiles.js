@@ -25,9 +25,15 @@ const getters = {
     profiles: (state) => state.profilesArray
 };
 
-const actions = {};
+const actions = {
+    createProfile({ commit } , profile) {
+      commit('pushProfile', profile);
+    },
+};
 
-const mutations = {};
+const mutations = {
+    pushProfile: (state, profile) => (state.profilesArray.push(profile)),
+};
 
 export default {
     state,

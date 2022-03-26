@@ -16,18 +16,26 @@
           />
         </figure>
         <input
-          class="body__input text-[14px] md:text-[18px] lg:text-[20px]"
+          :class="['body__input', wrongName ? 'body__input--wrong' : '']"
           type="text"
           placeholder="Nome"
+          v-model="newProfile.name"
         />
-        <div class="body__checkbox text-[14px] md:text-[18px] lg:text-[20px]">
-          <input type="checkbox" name="adult" value="adult" />
+        <div class="body__checkbox">
+          <input
+            type="checkbox"
+            name="adult"
+            value="adult"
+            v-model="newProfile.kids"
+          />
           <label for="adult">Bambino/a?</label>
         </div>
       </div>
 
       <div class="add-profile__footer">
-        <ActionButton text="Continua" color="white" />
+        <div @click="createNewProfile()">
+          <ActionButton text="Continua" color="white" />
+        </div>
         <router-link :to="{ name: 'ChooseProfile' }">
           <ActionButton text="Annulla" color="gray" />
         </router-link>
@@ -38,11 +46,47 @@
 
 <script>
 import ActionButton from "@/components/ActionButton.vue";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "AddProfile",
   components: {
     ActionButton,
+  },
+  data() {
+    return {
+      newProfile: {
+        id: null,
+        name: "",
+        avatar:
+          "https://occ-0-1068-92.1.nflxso.net/art/179a8/514618e1d7554648a39e294f43585ddba07179a8.png",
+        kids: false,
+      },
+      wrongName: false,
+    };
+  },
+  methods: {
+    ...mapActions(["createProfile"]),
+    createNewProfile() {
+      if (this.newProfile.name !== "" && this.newProfile.name !== " ") {
+        this.wrongName = false;
+        this.newProfile.id = this.profiles.length + 1;
+        this.createProfile(this.newProfile);
+        this.newProfile = {
+          id: null,
+          name: "",
+          avatar:
+            "https://occ-0-1068-92.1.nflxso.net/art/179a8/514618e1d7554648a39e294f43585ddba07179a8.png",
+          kids: false,
+        };
+        this.$router.push({ name: "ChooseProfile" });
+      } else {
+        this.wrongName = true;
+      }
+    },
+  },
+  computed: {
+    ...mapGetters(["profiles"]),
   },
 };
 </script>
@@ -73,11 +117,15 @@ export default {
       }
 
       .body__input {
-        @apply sm:grow h-[36px] sm:h-[48px] px-5 bg-[#666666] text-[#9d9d9d];
+        @apply sm:grow h-[36px] sm:h-[48px] px-5 bg-[#666666] text-[#9d9d9d] text-[14px] md:text-[18px] lg:text-[20px];
+
+        &.body__input--wrong {
+          @apply outline outline-4 outline-red-700 animate-pulse;
+        }
       }
 
       .body__checkbox {
-        @apply w-[calc((100%-94px)/5)] flex justify-center items-center gap-3;
+        @apply w-[calc((100%-94px)/5)] text-[14px] md:text-[18px] lg:text-[20px] flex justify-center items-center gap-3;
 
         input {
           @apply shrink-0 w-[30px] m-0 border-[1px] border-[#333333] bg-[#141414] text-[#808080] grid place-content-center cursor-pointer appearance-none aspect-square;
