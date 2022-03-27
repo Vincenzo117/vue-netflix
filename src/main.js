@@ -4,10 +4,10 @@ import router from './router'
 import store from './store'
 import './index.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { faCirclePlus, faPencil } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faCirclePlus)
+library.add(faCirclePlus, faPencil)
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

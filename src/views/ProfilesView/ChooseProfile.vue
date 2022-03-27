@@ -93,7 +93,7 @@ export default {
     }
 
     .choose-profile__button {
-      @apply mt-10 lg:mt-24;
+      @apply mt-10 lg:mt-16;
     }
   }
 }
