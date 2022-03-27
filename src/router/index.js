@@ -20,9 +20,15 @@ const routes = [
     component: () => import('../views/ProfilesView/AddProfile.vue')
   },
   {
-    path: '/select-profile-to-manage',
+    path: '/manage-profile',
     name: 'SelectProfileToManage',
     component: () => import('../views/ProfilesView/SelectProfileToManage.vue')
+  },
+  {
+    path: '/manage-profile/:id',
+    name: 'ManageProfile',
+    component: () => import('../views/ProfilesView/ManageProfile.vue'),
+    props: true
   },
 
 ]

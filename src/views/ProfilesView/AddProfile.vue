@@ -56,6 +56,7 @@ export default {
         id: null,
         name: "",
         avatar: "",
+        language: 'it',
         kids: false,
       },
       wrongName: false,
@@ -115,7 +116,7 @@ export default {
       }
 
       .body__input {
-        @apply sm:grow h-[36px] sm:h-[48px] px-5 bg-[#666666] text-[#9d9d9d] text-[14px] md:text-[18px] lg:text-[20px];
+        @apply sm:grow h-[36px] sm:h-[48px] px-5 bg-[#666666] text-white text-[14px] md:text-[18px] lg:text-[20px];
 
         &.body__input--wrong {
           @apply outline outline-4 outline-red-700 animate-pulse;

@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 #action-button {
-  @apply py-2 px-11 border-[1px] text-[16px] md:text-[20px] lg:text-[24px] transition-all;
+  @apply py-2 px-11 border-[1px] text-[16px] md:text-[20px] lg:text-[24px] whitespace-nowrap transition-all;
 
   &.action-button--gray {
       @apply border-[#808080] hover:border-white text-[#808080] hover:text-white;

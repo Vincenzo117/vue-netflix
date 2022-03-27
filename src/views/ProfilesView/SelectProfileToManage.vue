@@ -4,21 +4,29 @@
       <h1 class="choose-profile__title">Gestisci i profili:</h1>
 
       <ul class="choose-profile__profile-list">
-        <li
+        <router-link
+          class="contents"
           v-for="profile in profiles"
           :key="profile.id"
-          :class="['profile-card', profile.id == 1 ? 'profile-card--kids' : '']"
+          :to="{ name: 'ManageProfile', params: { id: profile.id } }"
         >
-          <figure class="profile-card__avatar">
-            <img :src="profile.avatar" alt="" />
-            <div class="profile-card__overlay">
-              <font-awesome-icon icon="fa-solid fa-pencil" />
-            </div>
-          </figure>
-          <h3 class="profile-card__title">
-            {{ profile.name }}
-          </h3>
-        </li>
+          <li
+            :class="[
+              'profile-card',
+              profile.id == 1 ? 'profile-card--kids' : '',
+            ]"
+          >
+            <figure class="profile-card__avatar">
+              <img :src="profile.avatar" alt="" />
+              <div class="profile-card__overlay">
+                <font-awesome-icon icon="fa-solid fa-pencil" />
+              </div>
+            </figure>
+            <h3 class="profile-card__title">
+              {{ profile.name }}
+            </h3>
+          </li>
+        </router-link>
         <router-link :to="{ name: 'AddProfile' }" class="contents">
           <li class="profile-card profile-card--add-profile">
             <figure class="profile-card__avatar">
@@ -77,10 +85,9 @@ export default {
         .profile-card__avatar {
           @apply relative rounded-md overflow-hidden;
 
-          .profile-card__overlay{
+          .profile-card__overlay {
             @apply absolute top-0 right-0 bottom-0 left-0 bg-black/70 text-[30px] flex justify-center items-center;
           }
-          
         }
 
         .profile-card__title {
