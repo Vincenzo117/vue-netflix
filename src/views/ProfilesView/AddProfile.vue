@@ -56,7 +56,7 @@ export default {
         id: null,
         name: "",
         avatar: "",
-        language: 'it',
+        language: "it",
         kids: false,
       },
       wrongName: false,
@@ -65,7 +65,11 @@ export default {
   methods: {
     ...mapActions(["createProfile"]),
     createNewProfile() {
-      if (this.newProfile.name !== "" && this.newProfile.name !== " ") {
+      if (
+        this.newProfile.name !== "" &&
+        this.newProfile.name !== " " &&
+        this.newProfile.name.length < 16
+      ) {
         this.wrongName = false;
         this.newProfile.id = this.profiles.length + 1;
         this.createProfile(this.newProfile);

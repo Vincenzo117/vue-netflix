@@ -7,44 +7,69 @@
 
       <div class="manage-profile__body">
         <figure class="body__thumb">
-          <img :src="profile.avatar" alt="#" />
+          <img :src="modifiedProfile.avatar" alt="#" />
+          <div class="body__thumb-icon" @click="showAvatars = true">
+            <font-awesome-icon icon="fa-solid fa-pencil" />
+          </div>
         </figure>
 
         <input
           :class="['body__input-name', wrongName ? 'body__input--wrong' : '']"
           type="text"
           placeholder="Nome"
-          v-model="profileNameInput"
+          v-model="modifiedProfile.name"
         />
 
         <div class="body__input-wrapper">
           <div class="body__input-language">
             <label for="language">Lingua:</label>
-            <select name="language" id="language">
+            <select
+              name="language"
+              id="language"
+              v-model="modifiedProfile.language"
+            >
               <option value="it">Italiano</option>
               <option value="en">Inglese</option>
             </select>
           </div>
 
           <div class="body__input-kids">
-            <input type="checkbox" name="adult" value="adult" />
+            <input
+              type="checkbox"
+              name="adult"
+              value="adult"
+              v-model="modifiedProfile.kids"
+            />
             <label for="adult">Bambino/a?</label>
           </div>
         </div>
       </div>
 
       <div class="manage-profile__footer">
-        <div>
+        <div @click="saveProfile()">
           <ActionButton text="Salva" color="white" />
         </div>
         <router-link :to="{ name: 'ChooseProfile' }">
           <ActionButton text="Annulla" color="gray" />
         </router-link>
-        <div>
+        <div @click="cancelProfile()">
           <ActionButton text="Elimina Profilo" color="gray" />
         </div>
       </div>
     </div>
+
+    <ul class="manage-profile__avatars-list" v-if="showAvatars">
+      <li
+        class="avatar-list__avatar-item"
+        v-for="(avatar, i) in profileAvatars"
+        :key="i"
+        @click="updateAvatar(avatar)"
+      >
+        <figure>
+          <img :src="avatar" alt="" />
+        </figure>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -60,7 +85,14 @@ export default {
   data() {
     return {
       wrongName: false,
-      profileNameInput: "",
+      showAvatars: false,
+      modifiedProfile: {
+        id: null,
+        name: "",
+        avatar: "",
+        language: "",
+        kids: false,
+      },
     };
   },
   props: {
@@ -70,16 +102,42 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["profiles"]),
+    ...mapGetters(["profiles", "profileAvatars"]),
     profile() {
       return this.profiles[this.id - 1];
     },
   },
   methods: {
-    ...mapActions([]),
+    ...mapActions(["deleteProfile", "updateProfile"]),
+    updateAvatar(avatar) {
+      this.modifiedProfile.avatar = avatar;
+      this.showAvatars = false;
+    },
+    cancelProfile() {
+      this.deleteProfile(this.id);
+      this.$router.push({ name: "ChooseProfile" });
+    },
+    saveProfile() {
+      if (
+        this.modifiedProfile.name !== "" &&
+        this.modifiedProfile.name !== " " &&
+        this.modifiedProfile.name.length < 16
+      ) {
+        this.updateProfile(this.modifiedProfile);
+        this.$router.push({ name: "ChooseProfile" });
+      } else {
+        this.wrongName = true;
+      }
+    },
   },
   created() {
-    this.profileNameInput = this.profile.name;
+    this.modifiedProfile = {
+      id: this.id,
+      name: this.profile.name,
+      avatar: this.profile.avatar,
+      language: this.profile.language,
+      kids: this.profile.kids,
+    };
   },
 };
 </script>
@@ -103,7 +161,11 @@ export default {
       @apply w-full py-7 border-b-[1px] border-[#333333] flex flex-col items-center gap-4 md:grid grid-rows-3 md:grid-rows-2 md:grid-cols-4 gap-x-6 gap-y-3;
 
       .body__thumb {
-        @apply w-[140px] rounded-md overflow-hidden md:row-span-2;
+        @apply relative w-[140px] rounded-md overflow-hidden md:row-span-2;
+
+        .body__thumb-icon {
+          @apply absolute bottom-2 left-3 w-8 bg-black/50 text-[12px] rounded-full aspect-square flex justify-center items-center cursor-pointer;
+        }
       }
 
       .body__input-name {
@@ -152,6 +214,14 @@ export default {
       #action-button {
         @apply px-0 w-40 sm:px-11 sm:w-auto;
       }
+    }
+  }
+
+  .manage-profile__avatars-list {
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[50vh] p-12 rounded-lg bg-black/80 flex flex-wrap justify-center items-center gap-3 overflow-auto;
+
+    .avatar-list__avatar-item {
+      @apply min-w-[30px] max-w-[150px] rounded-md overflow-hidden cursor-pointer;
     }
   }
 }

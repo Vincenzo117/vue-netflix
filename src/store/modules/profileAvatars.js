@@ -21,6 +21,17 @@ const state = {
         "https://occ-0-1068-92.1.nflxso.net/art/90a1b/d98803e05bf408c6dfedbc719a7ca28056e90a1b.png",
         "https://occ-0-1068-92.1.nflxso.net/art/e8bfe/2c29fe19ca84a9988985e685af68f89c38fe8bfe.png",
         "https://occ-0-1068-92.1.nflxso.net/art/441d5/d6cc08e17e7e8d1364f8334ff3fffe0ebc5441d5.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/c7ea2/ab21304ad03dc74e4267320069636ca096ec7ea2.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/46174/c8bee56cab33534298cb48603070815d2a746174.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/44cd1/35d29230db5589057d23849f6369f22e90044cd1.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/fa084/9fd0c29b9c9bc8798f6f9e31fa911472961fa084.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/c2f7c/cdee18c63c471c600858d0c06b5d61da29ac2f7c.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/7a4ef/459f88a156787af739866a00f11b54145887a4ef.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/38671/33700acc1f953fa9b0efd133ac571e4b3bd38671.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/59994/9deb6e824ea38c79ad576aa71bcb4cc9b8259994.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/22299/fc6d6894a4882f1b68a442c5cfbae27267f22299.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/36294/c20cc977272fe1f5ecd17723cb49a8ec1ad36294.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/43c8a/ed02012227e85bf9dfd0acd5445d37730ff43c8a.png",
     ]
 };
 

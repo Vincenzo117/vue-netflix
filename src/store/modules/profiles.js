@@ -32,10 +32,18 @@ const actions = {
     createProfile({ commit } , profile) {
       commit('pushProfile', profile);
     },
+    deleteProfile({ commit }, id) {
+        commit('spliceProfile', id);
+    },
+    updateProfile( { commit }, updatedProfile) {
+        commit('replaceProfile', updatedProfile);
+    }
 };
 
 const mutations = {
     pushProfile: (state, profile) => (state.profilesArray.push(profile)),
+    spliceProfile: (state, id) => (state.profilesArray.splice(id - 1, 1)),
+    replaceProfile: (state, newProfile) => (state.profilesArray[newProfile.id - 1] = newProfile)
 };
 
 export default {
