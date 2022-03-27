@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 #main-header {
-  @apply shrink-0 py-6 px-5 md:px-11 bg-gradient-to-b from-[#060606] flex justify-between;
+  @apply fixed top-0 left-0 right-0 py-6 px-5 md:px-11 bg-gradient-to-b from-[#060606] flex justify-between;
 
   .main-header__logo {
     @apply w-10 md:w-24;

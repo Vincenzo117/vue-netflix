@@ -21,20 +21,13 @@ About 22MB total
 "https://occ-0-1068-92.1.nflxso.net/art/c60c3/e3a02ef54d008db8544100a9a142d0d4064c60c3.png",
 "https://occ-0-1068-92.1.nflxso.net/art/12269/d902e647161533a1a84869f97e6aa694d0012269.png",
 
-Super Monsters 01
-https://occ-0-1068-92.1.nflxso.net/art/9d2eb/0a4819f8b96ddf1f9a3fa978ef8ea4e05409d2eb.png
-Super Monsters 02
-https://occ-0-1068-92.1.nflxso.net/art/6846f/fd6b419c0d2ce40d2379ff9e73e18a68d0d6846f.png
-Super Monsters 03
-https://occ-0-1068-92.1.nflxso.net/art/42e3b/0c41d8a7f29e0fb5bdc6259df4c5c404c8842e3b.png
-Super Monsters 04
-https://occ-0-1068-92.1.nflxso.net/art/6aeba/f771b08c52a6c4e547b4c3bff03207b91406aeba.png
-Super Monsters 05
-https://occ-0-1068-92.1.nflxso.net/art/e107f/6ef91d4e1b1377703ed9caef1072f327c5ce107f.png
-Super Monsters 06
-https://occ-0-1068-92.1.nflxso.net/art/36253/122f92cf0a96e501420cfc502776f5698e436253.png
-Super Monsters 07
-https://occ-0-1068-92.1.nflxso.net/art/f7c43/c9f5dc418c671d796c25b0e3c03789230c3f7c43.png
+"https://occ-0-1068-92.1.nflxso.net/art/9d2eb/0a4819f8b96ddf1f9a3fa978ef8ea4e05409d2eb.png",
+"https://occ-0-1068-92.1.nflxso.net/art/6846f/fd6b419c0d2ce40d2379ff9e73e18a68d0d6846f.png",
+"https://occ-0-1068-92.1.nflxso.net/art/42e3b/0c41d8a7f29e0fb5bdc6259df4c5c404c8842e3b.png",
+"https://occ-0-1068-92.1.nflxso.net/art/6aeba/f771b08c52a6c4e547b4c3bff03207b91406aeba.png",
+"https://occ-0-1068-92.1.nflxso.net/art/e107f/6ef91d4e1b1377703ed9caef1072f327c5ce107f.png",
+"https://occ-0-1068-92.1.nflxso.net/art/36253/122f92cf0a96e501420cfc502776f5698e436253.png",
+"https://occ-0-1068-92.1.nflxso.net/art/f7c43/c9f5dc418c671d796c25b0e3c03789230c3f7c43.png",
 
 Skylanders Academy 01
 https://occ-0-1068-92.1.nflxso.net/art/c7ea2/ab21304ad03dc74e4267320069636ca096ec7ea2.png
@@ -528,16 +521,11 @@ https://occ-0-1068-92.1.nflxso.net/art/2d212/690a8f9ebe7f06341f356676d11b050e4cf
 Lost in Space 09
 https://occ-0-1068-92.1.nflxso.net/art/3dea4/8a4549edf9f049ee41c1de9cfda273ab7d23dea4.png
 
-Bojack Horseman 01
-https://occ-0-1068-92.1.nflxso.net/art/c7605/54c5351f5834c88f359014ed756f5d7a49ac7605.png
-Bojack Horseman 02
-https://occ-0-1068-92.1.nflxso.net/art/e289c/94a6a070c887011e5b6658fddebd7a25f3de289c.png
-Bojack Horseman 03
-https://occ-0-1068-92.1.nflxso.net/art/90a1b/d98803e05bf408c6dfedbc719a7ca28056e90a1b.png
-Bojack Horseman 04
-https://occ-0-1068-92.1.nflxso.net/art/e8bfe/2c29fe19ca84a9988985e685af68f89c38fe8bfe.png
-Bojack Horseman 05
-https://occ-0-1068-92.1.nflxso.net/art/441d5/d6cc08e17e7e8d1364f8334ff3fffe0ebc5441d5.png
+"https://occ-0-1068-92.1.nflxso.net/art/c7605/54c5351f5834c88f359014ed756f5d7a49ac7605.png",
+"https://occ-0-1068-92.1.nflxso.net/art/e289c/94a6a070c887011e5b6658fddebd7a25f3de289c.png",
+"https://occ-0-1068-92.1.nflxso.net/art/90a1b/d98803e05bf408c6dfedbc719a7ca28056e90a1b.png",
+"https://occ-0-1068-92.1.nflxso.net/art/e8bfe/2c29fe19ca84a9988985e685af68f89c38fe8bfe.png",
+"https://occ-0-1068-92.1.nflxso.net/art/441d5/d6cc08e17e7e8d1364f8334ff3fffe0ebc5441d5.png",
 
 A Series of Unfortunate Events 01
 https://occ-0-1068-92.1.nflxso.net/art/184af/f18e312f9913cad93a0910e6589a09816b8184af.png

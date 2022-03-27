@@ -25,7 +25,10 @@
           </li>
         </router-link>
       </ul>
-      <router-link :to="{ name: 'SelectProfileToManage' }" class="choose-profile__button">
+      <router-link
+        :to="{ name: 'SelectProfileToManage' }"
+        class="choose-profile__button"
+      >
         <ActionButton text="Gestisci i profili" color="gray" />
       </router-link>
     </div>
@@ -77,14 +80,14 @@ export default {
         }
 
         &.profile-card--add-profile {
-            @apply order-[100];
+          @apply order-[100];
           .profile-card__avatar {
             @apply aspect-square text-[80px] flex justify-center items-center;
           }
         }
 
         &.profile-card--kids {
-            @apply order-[99];
+          @apply order-[99];
         }
       }
     }

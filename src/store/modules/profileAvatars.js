@@ -16,6 +16,11 @@ const state = {
         "https://occ-0-1068-92.1.nflxso.net/art/fe173/c8fd7054902e84a40e5236f756c89aecb2ffe173.png",
         "https://occ-0-1068-92.1.nflxso.net/art/c60c3/e3a02ef54d008db8544100a9a142d0d4064c60c3.png",
         "https://occ-0-1068-92.1.nflxso.net/art/12269/d902e647161533a1a84869f97e6aa694d0012269.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/c7605/54c5351f5834c88f359014ed756f5d7a49ac7605.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/e289c/94a6a070c887011e5b6658fddebd7a25f3de289c.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/90a1b/d98803e05bf408c6dfedbc719a7ca28056e90a1b.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/e8bfe/2c29fe19ca84a9988985e685af68f89c38fe8bfe.png",
+        "https://occ-0-1068-92.1.nflxso.net/art/441d5/d6cc08e17e7e8d1364f8334ff3fffe0ebc5441d5.png",
     ]
 };
 
