@@ -98,7 +98,7 @@ export default {
   props: {
     id: {
       type: Number,
-      default: 1,
+      required: true,
     },
   },
   computed: {
@@ -221,7 +221,7 @@ export default {
     @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[50vh] p-12 rounded-lg bg-black/80 flex flex-wrap justify-center items-center gap-3 overflow-auto;
 
     .avatar-list__avatar-item {
-      @apply min-w-[30px] max-w-[150px] rounded-md overflow-hidden cursor-pointer;
+      @apply min-w-[30px] max-w-[150px] rounded-md hover:outline outline-4 outline-white overflow-hidden cursor-pointer transition-all;
     }
   }
 }

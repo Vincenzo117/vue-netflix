@@ -34,7 +34,7 @@ export default {
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: opacity 1s, scale 1s; 
+  transition: opacity 1s, scale 1s, transform 1s;
 }
 .slide-enter,
 .slide-leave {

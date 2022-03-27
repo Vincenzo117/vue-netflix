@@ -6,13 +6,10 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    redirect: '/choose-profile'
-  },
-  {
     path: '/choose-profile',
     name: 'ChooseProfile',
-    component: ChooseProfile
+    component: ChooseProfile,
+    alias: '/'
   },
   {
     path: '/create-new-profile',
@@ -22,12 +19,12 @@ const routes = [
   {
     path: '/manage-profile',
     name: 'SelectProfileToManage',
-    component: () => import('../views/ProfilesView/SelectProfileToManage.vue')
+    component: () => import('../views/ProfilesView/ProfileManagement/SelectProfileToManage.vue')
   },
   {
-    path: '/manage-profile/:id',
+    path: '/manage-profile/:name',
     name: 'ManageProfile',
-    component: () => import('../views/ProfilesView/ManageProfile.vue'),
+    component: () => import('../views/ProfilesView/ProfileManagement/ManageProfile.vue'),
     props: true
   },
 
