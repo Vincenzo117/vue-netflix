@@ -4,18 +4,29 @@
       <h1 class="choose-profile__title">Chi vuole guardare Netflix?</h1>
 
       <ul class="choose-profile__profile-list">
-        <li
+        <router-link
+          class="contents"
           v-for="profile in profiles"
           :key="profile.id"
-          :class="['profile-card', profile.id == 1 ? 'profile-card--kids' : '']"
+          :to="{
+            name: 'BrowseHome',
+            params: { id: profile.id, name: profile.name },
+          }"
         >
-          <figure class="profile-card__avatar">
-            <img :src="profile.avatar" alt="" />
-          </figure>
-          <h3 class="profile-card__title">
-            {{ profile.name }}
-          </h3>
-        </li>
+          <li
+            :class="[
+              'profile-card',
+              profile.id == 1 ? 'profile-card--kids' : '',
+            ]"
+          >
+            <figure class="profile-card__avatar">
+              <img :src="profile.avatar" alt="" />
+            </figure>
+            <h3 class="profile-card__title">
+              {{ profile.name }}
+            </h3>
+          </li>
+        </router-link>
         <router-link :to="{ name: 'AddProfile' }" class="contents">
           <li class="profile-card profile-card--add-profile">
             <figure class="profile-card__avatar">

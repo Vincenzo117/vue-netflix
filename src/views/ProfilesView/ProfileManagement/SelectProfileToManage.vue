@@ -8,7 +8,10 @@
           class="contents"
           v-for="profile in profiles"
           :key="profile.id"
-          :to="{ name: 'ManageProfile', params: { id: profile.id, name: profile.name } }"
+          :to="{
+            name: 'ManageProfile',
+            params: { id: profile.id, name: profile.name },
+          }"
         >
           <li
             :class="[

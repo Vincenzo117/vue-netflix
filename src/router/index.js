@@ -25,9 +25,14 @@ const routes = [
     path: '/manage-profile/:name',
     name: 'ManageProfile',
     component: () => import('../views/ProfilesView/ProfileManagement/ManageProfile.vue'),
-    props: true
+    props: true 
   },
-
+  {
+    path: '/browse/:name',
+    name: 'BrowseHome',
+    component: () => import('../views/BrowseView/BrowseHome.vue'),
+    props: true,
+  }
 ]
 
 const router = new VueRouter({
