@@ -34,13 +34,64 @@
             <font-awesome-icon icon="fa-solid fa-bell" />
           </button>
         </li>
-        <li class="navbar__profile-selection">
+        <li
+          @mouseenter="displayProfiles = true"
+          class="navbar__profile-selection"
+        >
           <figure class="navbar__profile-avatar">
             <img :src="profile ? profile.avatar : ''" alt="" />
           </figure>
-          <button @click="showProfiles()">
+          <div :class="[displayProfiles ? 'rotate-180' : '', 'transition-all']">
             <font-awesome-icon icon="fa-solid fa-caret-down" />
-          </button>
+          </div>
+          <div
+            :class="[
+              'navbar__profiles-menu-wrapper',
+              displayProfiles ? 'right-0' : '-right-[700px]',
+            ]"
+            @mouseleave="displayProfiles = false"
+          >
+            <ul class="profiles-menu__profile-list">
+              <router-link
+                class="contents"
+                v-for="profile in profiles"
+                :key="profile.id"
+                :to="{
+                  name: 'BrowseHome',
+                  params: { id: profile.id, name: profile.name },
+                }"
+              >
+                <li class="profiles-menu__profile">
+                  <figure class="profile__avatar">
+                    <img :src="profile.avatar" alt="" />
+                  </figure>
+                  <span class="profile__name">
+                    {{ profile.name }}
+                  </span>
+                </li>
+              </router-link>
+              <router-link
+                class="contents"
+                :to="{
+                  name: 'SelectProfileToManage',
+                }"
+              >
+                <li class="profiles-menu__manage-profiles">
+                  <font-awesome-icon
+                    class="manage-profiles__icon"
+                    icon="fa-solid fa-pencil"
+                  />
+                  <span class="manage-profiles__name">Gestisci i profili</span>
+                </li>
+              </router-link>
+            </ul>
+
+            <div class="profiles-menu__exit">
+              <router-link :to="{ name: 'ChooseProfile' }">
+                Esci da Netflix
+              </router-link>
+            </div>
+          </div>
         </li>
       </ul>
     </nav>
@@ -53,7 +104,9 @@ import { mapGetters } from "vuex";
 export default {
   name: "MainHeader",
   data() {
-    displayProfiles: false
+    return {
+      displayProfiles: false,
+    };
   },
   computed: {
     ...mapGetters(["profiles"]),
@@ -91,10 +144,10 @@ export default {
   }
 
   .main-header__navbar {
-    @apply grow flex justify-between items-center;
+    @apply grow flex justify-end md:justify-between items-center gap-5;
 
     .navbar__categories {
-      @apply text-[14px] flex gap-5;
+      @apply hidden md:flex text-[14px] gap-5;
 
       .navbar__category {
         @apply hover:text-white/70 whitespace-nowrap transition-all  cursor-pointer;
@@ -104,14 +157,68 @@ export default {
         }
       }
     }
+
     .navbar__actions {
       @apply flex items-center gap-5;
 
       .navbar__profile-selection {
-        @apply flex items-center gap-2;
+        @apply relative flex items-center gap-2 cursor-pointer;
+
         .navbar__profile-avatar {
           @apply w-8 rounded overflow-hidden;
         }
+
+        .navbar__profiles-menu-wrapper {
+          @apply absolute top-[45px] border-[1px] border-gray-500/30 bg-black/70 transition-all;
+
+          .profiles-menu__profile-list {
+            @apply p-4 border-b-[1px] border-gray-400/30 flex flex-col gap-3;
+
+            .profiles-menu__profile {
+              @apply flex items-center gap-2;
+
+              .profile__avatar {
+                @apply w-8 rounded overflow-hidden;
+              }
+
+              .profile__name {
+                @apply text-[13px];
+              }
+
+              &:hover {
+                .profile__name {
+                  @apply underline transition-all;
+                }
+              }
+            }
+
+            .profiles-menu__manage-profiles {
+              @apply text-[13px] flex items-center gap-2;
+
+              .manage-profiles__icon {
+                @apply w-8 text-[#808080];
+              }
+
+              .manage-profiles__name {
+                @apply whitespace-nowrap;
+              }
+
+              &:hover {
+                .manage-profiles__name {
+                  @apply underline;
+                }
+              }
+            }
+          }
+
+          .profiles-menu__exit {
+            @apply ml-8 p-4 text-[13px] hover:underline;
+          }
+        }
+      }
+
+      .navbar__kids-category {
+        @apply hidden lg:block;
       }
     }
   }
