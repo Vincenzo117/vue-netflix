@@ -17,7 +17,8 @@
       </ul>
       <ul class="navbar__actions">
         <li class="navbar__searchbar-wrapper">
-          <button>
+          <button @mouseenter="showSearchbar = true">
+            <input type="text" :class="[showSearchbar ? 'w-40 border-[1px]' : 'w-0', 'searchbar__input']" @mouseleave="showSearchbar = false">
             <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
           </button>
         </li>
@@ -106,6 +107,7 @@ export default {
   data() {
     return {
       displayProfiles: false,
+      showSearchbar: false
     };
   },
   computed: {
@@ -131,7 +133,7 @@ export default {
 
 <style lang="scss" scoped>
 #main-header {
-  @apply fixed top-0 left-0 right-0 py-6 px-5 md:px-11 bg-gradient-to-b from-[#060606] flex items-center gap-10;
+  @apply fixed top-0 left-0 z-50 right-0 py-6 px-5 md:px-11 bg-gradient-to-b from-[#060606] flex items-center gap-10;
 
   .main-header__logo {
     @apply shrink-0 w-10 md:w-24;
@@ -160,6 +162,12 @@ export default {
 
     .navbar__actions {
       @apply flex items-center gap-5;
+
+      .navbar__searchbar-wrapper {
+        .searchbar__input{
+          @apply  bg-black transition-all;
+        }
+      }
 
       .navbar__profile-selection {
         @apply relative flex items-center gap-2 cursor-pointer;

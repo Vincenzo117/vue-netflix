@@ -25,7 +25,7 @@ const routes = [
     path: '/manage-profile/:name',
     name: 'ManageProfile',
     component: () => import('../views/ProfilesView/ProfileManagement/ManageProfile.vue'),
-    props: true 
+    props: true
   },
   {
     path: '/browse/:name',

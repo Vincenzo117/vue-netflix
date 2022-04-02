@@ -66,7 +66,7 @@ export default {
   @apply grow py-5 px-14 flex justify-center items-center transition-all;
 
   .choose-profile__content-wrapper {
-    @apply flex flex-col justify-center items-center;
+    @apply relative bottom-[50px] flex flex-col justify-center items-center;
 
     .choose-profile__title {
       @apply mb-12 text-[22px] sm:text-[30px] md:text-[calc(2.5vw+20px)] whitespace-nowrap;

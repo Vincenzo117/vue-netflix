@@ -1,6 +1,6 @@
 <template>
   <div id="browse-home">
-    {{ profile.name }}
+    <div class="browse-home-wrapper"></div>
   </div>
 </template>
 
@@ -25,4 +25,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>
