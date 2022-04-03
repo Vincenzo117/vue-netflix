@@ -17,9 +17,20 @@
       </ul>
       <ul class="navbar__actions">
         <li class="navbar__searchbar-wrapper">
-          <button @mouseenter="showSearchbar = true">
-            <input type="text" :class="[showSearchbar ? 'w-40 border-[1px]' : 'w-0', 'searchbar__input']" @mouseleave="showSearchbar = false">
-            <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+          <button @click="showSearchbar = true">
+            <input
+              type="text"
+              v-model="searchbarInput"
+              :class="[
+                showSearchbar ? 'w-60 bg-black' : 'w-0',
+                'searchbar__input',
+              ]"
+              @blur="showSearchbar = false"
+            />
+            <font-awesome-icon
+              class="searchbar__icon"
+              icon="fa-solid fa-magnifying-glass"
+            />
           </button>
         </li>
         <router-link
@@ -100,15 +111,31 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "MainHeader",
   data() {
     return {
       displayProfiles: false,
-      showSearchbar: false
+      showSearchbar: false,
+      searchbarInput: "",
     };
+  },
+  watch: {
+    searchbarInput: function (newInput, oldInput) {
+      if (newInput != ""  || oldInput != "") {
+        if (this.$route.name == "BrowseHome") {
+          this.$router.push({ name: "SearchView", params: {name: this.profile.name, id: this.profile.id} });
+        } else if(newInput == "") {
+          this.$router.push({ name: "BrowseHome", params: {name: this.profile.name, id: this.profile.id} })
+        }
+        this.search(newInput);
+      }
+    },
+  },
+  methods: {
+    ...mapActions(["search"])
   },
   computed: {
     ...mapGetters(["profiles"]),
@@ -164,8 +191,13 @@ export default {
       @apply flex items-center gap-5;
 
       .navbar__searchbar-wrapper {
-        .searchbar__input{
-          @apply  bg-black transition-all;
+        @apply relative;
+
+        .searchbar__input {
+          @apply pr-3 pl-12 py-2 bg-transparent transition-all cursor-pointer;
+        }
+        .searchbar__icon {
+          @apply absolute left-[20px] top-1/2 -translate-y-1/2 pointer-events-none;
         }
       }
 

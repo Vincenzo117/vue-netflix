@@ -1,6 +1,8 @@
 <template>
   <div id="browse-home">
-    <div class="browse-home-wrapper"></div>
+    <div class="browse-home-wrapper">
+      <h1>{{ profile.name }}'s homepage</h1>
+    </div>
   </div>
 </template>
 
@@ -25,5 +27,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#browse-home{
+  @apply grow flex;
+  .browse-home-wrapper {
+    @apply grow flex justify-center items-center;
+  }
+}
 
 </style>

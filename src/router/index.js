@@ -32,7 +32,14 @@ const routes = [
     name: 'BrowseHome',
     component: () => import('../views/BrowseView/BrowseHome.vue'),
     props: true,
-  }
+  },
+  {
+    path: '/search/:name',
+    name: 'SearchView',
+    component: () => import('../views/BrowseView/SearchView.vue'),
+    props: true,
+  },
+
 ]
 
 const router = new VueRouter({
