@@ -131,11 +131,12 @@ export default {
           this.$router.push({ name: "BrowseHome", params: {name: this.profile.name, id: this.profile.id} })
         }
         this.search(newInput);
+        this.fetchData();
       }
     },
   },
   methods: {
-    ...mapActions(["search"])
+    ...mapActions(["search","fetchData"])
   },
   computed: {
     ...mapGetters(["profiles"]),
