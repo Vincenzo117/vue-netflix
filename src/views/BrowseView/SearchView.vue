@@ -37,12 +37,12 @@ export default {
 
 <style lang="scss" scoped>
 #search-view {
-  @apply grow p-12 flex flex-wrap gap-x-2 gap-y-10 justify-center items-center ;
+  @apply grow p-12 flex flex-wrap gap-x-2 gap-y-10 justify-center items-center;
 
   .search-result {
-      .result__thumb {
-          @apply min-w-[150px] max-w-[280px] aspect-video rounded-md overflow-hidden;
-      }
+    .result__thumb {
+      @apply min-w-[150px] max-w-[280px] aspect-video rounded-md overflow-hidden;
+    }
   }
 
   .loading {

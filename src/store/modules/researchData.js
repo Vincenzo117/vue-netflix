@@ -31,21 +31,6 @@ const actions = {
             .catch(err => {
                 console.warn(err.response)
             })
-        // getSeries() {
-        //     axios
-        //         .get(`${state.baseURI}/search/tv`, {
-        //             params: {
-        //                 api_key: "20fefb6c28c97eabe3d7a5781f7ea9db",
-        //                 query: state.filter,
-        //             },
-        //         })
-        //         .then(res => {
-        //             state.seriesFound = res.data.results;
-        //         })
-        //         .catch(err => {
-        //             console.warn(err.response)
-        //         })
-        // },
     }
 };
 
